@@ -1,3 +1,3 @@
 module.exports = {
-  url: 'mongodb://mongo:27017/gobarber',
+  url: process.env.MONGO_URL,
 };
