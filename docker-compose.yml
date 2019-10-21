@@ -16,6 +16,8 @@ services:
     depends_on:
       - db
       - mongo
+      - mail
+      - redis
   
   db:
     image: postgres:11
@@ -30,3 +32,14 @@ services:
     image: mongo
     ports:
       - "127.0.0.1:27017:27017"
+
+  mail:
+    image: mailhog/mailhog
+    ports:
+      - "127.0.0.1:8025:8025"
+      - "127.0.0.1:1025:1025"
+
+  redis:
+    image: redis
+    ports:
+      - "127.0.0.1:16379:6379"
